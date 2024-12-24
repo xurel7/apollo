@@ -105,11 +105,11 @@ end)
 
 connections.WeaponUpdateConnection = assets.Backpack.ChildAdded:Connect(function(v: Tool)
   if v:FindFirstChild("Primary") then
-      assets.Primary = v
-    elseif v:FindFirstChild("Secondary") then
-      assets.Secondary = v
-    elseif v:FindFirstChild("Melee") then
-      assets.Melee = v
+    assets.Primary = v
+  elseif v:FindFirstChild("Secondary") then
+    assets.Secondary = v
+  elseif v:FindFirstChild("Melee") then
+    assets.Melee = v
   end
 end)
 
