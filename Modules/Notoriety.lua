@@ -116,7 +116,7 @@ end)
 return assets, functions, connections
 
 --[[
-\\ DISCONNECTING CONNECTIONS //
+\\ DISCONNECTING CONNECTIONS // (for anyone looking to use apollo's module although i dont know why lol)
 example script below
 local Assets, Functions, Connections = loadstring(game:HttpGet("https://raw.githubusercontent.com/xurel7/apollo/refs/heads/main/Modules/Notoriety.lua"))()
 
