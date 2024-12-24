@@ -66,7 +66,7 @@ if assets.Character then
     end
   end)
 
-  connections.CharacterCloseUpdateValueConnection = assets.Character.Destroying:Connect(function()
+  connections.CharacterCloseUpdateValueConnection = assets.Character.Destroying:Once(function()
     if connections.CharacterUpdateValueConnection then
       connections.CharacterUpdateValueConnection:Disconnect()
       connections.CharacterUpdateValueConnection = nil -- cleanup
@@ -93,7 +93,7 @@ connections.CharacterUpdateConnection = assets.LocalPlayer.CharacterAdded:Connec
     end
   end)
 
-  connections.CharacterCloseUpdateValueConnection = Character.Destroying:Connect(function()
+  connections.CharacterCloseUpdateValueConnection = Character.Destroying:Once(function()
     if connections.CharacterUpdateValueConnection then
       connections.CharacterUpdateValueConnection:Disconnect()
       connections.CharacterUpdateValueConnection = nil -- cleanup
