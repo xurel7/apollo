@@ -57,6 +57,22 @@ if not succ then
   warn("[APOLLO]: Failed to load certain assets. This may cause unexpected behaivor.")
 end
 
+if assets.Character then
+  connections.CharacterUpdateValueConnection = assets.Character.AncestryChanged:Connect(function()
+    if assets.Character.Parent == assets.Criminals then
+      assets.Stamina = Character:WaitForChild("Stamina")
+      assets.Speed = Character:WaitForChild("BaseSpeed")
+      assets.BodyBagSpeedChanger = Character:WaitForChild("BagSpeed")
+    end
+  end)
+
+  connections.CharacterCloseUpdateValueConnection = assets.Character.Destroying:Connect(function()
+    if connections.CharacterUpdateValueConnection then
+      connections.CharacterUpdateValueConnection:Disconnect()
+      connections.CharacterUpdateValueConnection = nil -- cleanup
+    end
+  end)
+end
 
 connections.CharacterUpdateConnection = assets.LocalPlayer.CharacterAdded:Connect(function(Character: Model)
   assets.Character = Character
@@ -68,7 +84,24 @@ connections.CharacterUpdateConnection = assets.LocalPlayer.CharacterAdded:Connec
     assets.Speed = Character:WaitForChild("BaseSpeed")
     assets.BodyBagSpeedChanger = Character:WaitForChild("BagSpeed")
   end
+
+  connections.CharacterUpdateValueConnection = Character.AncestryChanged:Connect(function()
+    if assets.Character.Parent == assets.Criminals then
+      assets.Stamina = Character:WaitForChild("Stamina")
+      assets.Speed = Character:WaitForChild("BaseSpeed")
+      assets.BodyBagSpeedChanger = Character:WaitForChild("BagSpeed")
+    end
+  end)
+
+  connections.CharacterCloseUpdateValueConnection = Character.Destroying:Connect(function()
+    if connections.CharacterUpdateValueConnection then
+      connections.CharacterUpdateValueConnection:Disconnect()
+      connections.CharacterUpdateValueConnection = nil -- cleanup
+    end
+  end)
 end)
+
+
 
 connections.WeaponUpdateConnection = assets.Backpack.ChildAdded:Connect(function(v: Tool)
   if v:FindFirstChild("Primary") then
