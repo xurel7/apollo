@@ -86,7 +86,7 @@ connections.CharacterUpdateConnection = assets.LocalPlayer.CharacterAdded:Connec
   end
 
   connections.CharacterUpdateValueConnection = Character.AncestryChanged:Connect(function()
-    if assets.Character.Parent == assets.Criminals then
+    if Character.Parent == assets.Criminals then
       assets.Stamina = Character:WaitForChild("Stamina")
       assets.Speed = Character:WaitForChild("BaseSpeed")
       assets.BodyBagSpeedChanger = Character:WaitForChild("BagSpeed")
