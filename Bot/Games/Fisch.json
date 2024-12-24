@@ -1,0 +1,42 @@
+{
+    "status": "online",
+    "warnings": "None",
+    "features": [
+        {
+            "name": "Auto Bait",
+            "description": "Automatically equips bait from your inventory when needed."
+        },
+        {
+            "name": "Auto Cast",
+            "description": "Automatically casts your rod without any input."
+        },
+        {
+            "name": "Auto Debug",
+            "description": "Runs an auto-debug during fishing to prevent fish-catching issues and automatically fixes any problems."
+        },
+        {
+            "name": "Auto Reel",
+            "description": "Automatically reels in fish once hooked."
+        },
+        {
+            "name": "Auto Sell",
+            "description": "Sells your fish automatically after a specified amount of time."
+        },
+        {
+            "name": "Auto Shake",
+            "description": "Shakes the rod automatically when needed to ensure fish stay on the line."
+        },
+        {
+            "name": "Auto Totem",
+            "description": "Automatically uses a totem from your inventory when required."
+        },
+        {
+            "name": "Client Optimizer",
+            "description": "Improves game performance by boosting FPS by 50-100."
+        },
+        {
+            "name": "Hide Fish",
+            "description": "Hides caught fish to prevent your inventory from filling up, improving FPS during long fishing sessions."
+        }
+    ]
+}
