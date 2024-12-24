@@ -1,0 +1,34 @@
+{
+    "status": "online",
+    "warnings": "None",
+    "features": [
+        {
+            "name": "Disable Cameras",
+            "description": "Immediately disables all cameras. Ensure all guards are eliminated first, as they can detect the cameras being destroyed!"
+        },
+        {
+            "name": "Hostage All Civilians",
+            "description": "Immediately turns all civilians into hostages, making it highly effective for stealth heists once the police are stealthily eliminated."
+        },
+        {
+            "name": "Infinite Stamina",
+            "description": "Allows you to run infinitely."
+        },
+        {
+            "name": "Kill All Police",
+            "description": "Instantly kills police and makes non-stealth heists a breeze."
+        },
+        {
+            "name": "Remove Proximity Prompt Delay",
+            "description": "Removes all delays on proximity prompts, enabling instant interaction with any object or action."
+        },
+        {
+            "name": "Speed Modifier",
+            "description": "Allows you to modify how fast you can move."
+        },
+        {
+            "name": "Weapon Modifications",
+            "description": "Lets you customize your weapons, including options for infinite ammo and damage adjustments."
+        }
+    ]
+}
