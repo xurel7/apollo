@@ -50,7 +50,10 @@ Functions.GetPlayersInActiveGame = function(): Player | {Player}?
 end
 
 Functions.IsPlayerTeamate = function(TargetPlayer: Player): boolean
-    local PlayerTeamId = v:FindFirstChild("Replicated") and v.Replicated:FindFirstChild("TeamID").Value
+    if not TargetPlayer then
+        return
+    end
+    local PlayerTeamId = TargetPlayer:FindFirstChild("Replicated") and TargetPlayer.Replicated:FindFirstChild("TeamID").Value
 
     if not PlayerGameId then
         return
@@ -114,11 +117,8 @@ Functions.GetPlayerWithBall = function(PlayerTable: {Player}): Player
         end
 
         local Football = TargetCharacter:FindFirstChild("FootballCircle",true) or TargetCharacter:FindFirstChild("Football")
-        if Football then
-            print(Football.ClassName) -- debug
-            if Football:IsA("BillboardGui") or Football:IsA("BasePart") then
-                return v
-            end
+        if Football and Football:IsA("BillboardGui") or Football:IsA("BasePart") then
+            return v
         end
     end
 end
