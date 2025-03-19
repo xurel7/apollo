@@ -114,8 +114,11 @@ Functions.GetPlayerWithBall = function(PlayerTable: {Player}): Player
         end
 
         local Football = TargetCharacter:FindFirstChild("FootballCircle",true) or TargetCharacter:FindFirstChild("Football")
-        if (Football) and Football:IsA("BillboardGui") or Football:IsA("BasePart") then
-            return v
+        if Football then
+            print(Football.ClassName) -- debug
+            if Football:IsA("BillboardGui") or Football:IsA("BasePart") then
+                return v
+            end
         end
     end
 end
