@@ -28,7 +28,7 @@ Variables.Character = Players.LocalPlayer.Character or Players.LocalPlayer.Chara
 
 Functions.GetPlayersInActiveGame = function(): Player | {Player}?
     if not GameId.Value then
-        return
+        return nil
     end
 
     local PlayersInGame = {}
@@ -51,19 +51,19 @@ end
 
 Functions.IsPlayerTeamate = function(TargetPlayer: Player): boolean
     if not TargetPlayer then
-        return
+        return nil
     end
     local PlayerTeamId = TargetPlayer:FindFirstChild("Replicated") and TargetPlayer.Replicated:FindFirstChild("TeamID").Value
 
     if not PlayerGameId then
-        return
+        return nil
     end
-    return PlayerGameId == Variables.CurrentTeam and true
+    return PlayerGameId == Variables.CurrentTeam and true or nil
 end
 
 Functions.EditMechanicFunction = function(Callback, Flag: string)
     if typeof(Callback) ~= "function" or not Flag then
-        return
+        return nil
     end
     Variables.GameMechanics[Flag] = function()
         Callback(Variables.MechanicSettings)
@@ -72,21 +72,21 @@ end
 
 Functions.RunMechanic = function(Flag: string)
     if not Flag then
-        return
+        return nil
     end
     Variables.GameMechanics[Flag](Variables.MechanicSettings)
 end
 
 Functions.ModifyMechanicSetting = function(Flag: string, Value: any)
     if not Flag or not Value then
-        return
+        return nil
     end
     Variables.MechanicSettings[Flag] = Value
 end
 
 Functions.GetClosestPlayer = function(MaxDistance: number, PlayerTable: {Player}): Player
     if not Character or not Character:FindFirstChild("HumanoidRootPart") then
-        return
+        return nil
     end
 
     local Check = PlayerTable or Players:GetPlayers()
