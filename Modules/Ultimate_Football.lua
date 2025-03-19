@@ -53,7 +53,7 @@ Functions.IsPlayerTeamate = function(TargetPlayer: Player): boolean
     local PlayerTeamId = v:FindFirstChild("Replicated") and v.Replicated:FindFirstChild("TeamID").Value
 
     if not PlayerGameId then
-        continue
+        return
     end
     return PlayerGameId == Variables.CurrentTeam and true
 end
@@ -74,7 +74,7 @@ Functions.RunMechanic = function(Flag: string)
     Variables.GameMechanics[Flag](Variables.MechanicSettings)
 end
 
-Functions.ModifyMechanicSetting(Flag: string, Value: any)
+Functions.ModifyMechanicSetting = function(Flag: string, Value: any)
     if not Flag or not Value then
         return
     end
