@@ -58,7 +58,7 @@ Functions.IsPlayerTeamate = function(TargetPlayer: Player): boolean
     return PlayerGameId == Variables.CurrentTeam and true
 end
 
-Function.EditMechanicFunction = function(Callback, Flag: string)
+Functions.EditMechanicFunction = function(Callback, Flag: string)
     if typeof(Callback) ~= "function" or not Flag then
         return
     end
@@ -67,21 +67,21 @@ Function.EditMechanicFunction = function(Callback, Flag: string)
     end
 end
 
-Function.RunMechanic = function(Flag: string)
+Functions.RunMechanic = function(Flag: string)
     if not Flag then
         return
     end
     Variables.GameMechanics[Flag](Variables.MechanicSettings)
 end
 
-Function.ModifyMechanicSetting(Flag: string, Value: any)
+Functions.ModifyMechanicSetting(Flag: string, Value: any)
     if not Flag or not Value then
         return
     end
     Variables.MechanicSettings[Flag] = Value
 end
 
-Function.GetClosestPlayer = function(MaxDistance: number, PlayerTable: {Player}): Player
+Functions.GetClosestPlayer = function(MaxDistance: number, PlayerTable: {Player}): Player
     if not Character or not Character:FindFirstChild("HumanoidRootPart") then
         return
     end
@@ -104,7 +104,7 @@ Function.GetClosestPlayer = function(MaxDistance: number, PlayerTable: {Player})
     return Closest
 end
 
-Function.GetPlayerWithBall = function(PlayerTable: {Player}): Player
+Functions.GetPlayerWithBall = function(PlayerTable: {Player}): Player
     local Check = PlayerTable or Players:GetPlayers()
 
     for i, v in ipairs(Check) do
