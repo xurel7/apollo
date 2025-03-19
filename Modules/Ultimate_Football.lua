@@ -18,11 +18,11 @@ local function findGame(GameId: string): Model
 end
 
 local GameId = Players.LocalPlayer.Replicated.GameID
+local InitScript = Players.LocalPlayer.PlayerScripts.ClientMain
 
 Variables.CurrentGame = GameId.Value and findGame(GameId.Value)
 Variables.CurrentTeam = Players.LocalPlayer.Replicated.TeamID.Value
-Variables.InitScript = Players.LocalPlayer.PlayerScripts.ClientMain
-Variables.GameMechanics = require(Variables.InitScript.Utilities.Variables).Mechanics
+Variables.GameMechanics = require(InitScript.Utilities.Variables).Mechanics
 Variables.MechanicSettings = require(ReplicatedStorage.Assets.Modules.Client.Mechanics)
 Variables.Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
 
