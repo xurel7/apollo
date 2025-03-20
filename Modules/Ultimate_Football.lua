@@ -50,12 +50,16 @@ Functions.GetPlayersInActiveGame = function(): Player | {Player}?
 end
 
 Functions.IsPlayerTeamate = function(TargetPlayer: Player): boolean
+    if not TargetPlayer then
+        return
+    end
     local PlayerTeamId = TargetPlayer:FindFirstChild("Replicated") and TargetPlayer.Replicated:FindFirstChild("TeamID").Value
 
     if not PlayerGameId then
+        print("not found") -- debug
         return nil
     end
-    return PlayerGameId == Variables.CurrentTeam and true or nil
+    return PlayerGameId == Variables.CurrentTeam
 end
 
 Functions.EditMechanicFunction = function(Callback, Flag: string)
