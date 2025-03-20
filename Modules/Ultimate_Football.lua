@@ -50,9 +50,6 @@ Functions.GetPlayersInActiveGame = function(): Player | {Player}?
 end
 
 Functions.IsPlayerTeamate = function(TargetPlayer: Player): boolean
-    if not TargetPlayer then
-        return nil
-    end
     local PlayerTeamId = TargetPlayer:FindFirstChild("Replicated") and TargetPlayer.Replicated:FindFirstChild("TeamID").Value
 
     if not PlayerGameId then
