@@ -58,7 +58,7 @@ Functions.IsPlayerTeamate = function(TargetPlayer: Player): boolean
     if not PlayerTeamId then
         return
     end
-    return PlayerGameId == Variables.CurrentTeam
+    return PlayerTeamId == Variables.CurrentTeam
 end
 
 Functions.EditMechanicFunction = function(Callback, Flag: string)
